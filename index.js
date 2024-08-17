@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const { MessagingResponse } = require('twilio').twiml;
@@ -6,7 +7,7 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const path = require('path');
 
-mongoose.connect("mongodb+srv://kumawatmitanshu0209:Mitsu%4005@cluster0.hdi89jo.mongodb.net/user_app");
+mongoose.connect(process.env.MONGODB_URI);
 const UserSchema = new mongoose.Schema({
     "userId": {type:String, },
     "currentStep": {type:String},
