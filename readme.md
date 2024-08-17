@@ -45,6 +45,7 @@ The Job Offer Letter Generator Bot is a WhatsApp-based application that assists 
 4. **Configure Environment:**
    - Replace the MongoDB connection string in `mongoose.connect` with your own.
    - Configure Twilio credentials and WhatsApp messaging settings.
+   - Change the mediaUrl according to your twilio credentials
 
 5. **Run the Server:**
 

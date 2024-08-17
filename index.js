@@ -115,7 +115,7 @@ app.post('/whatsapp', async (req, res) => {
     if(response == '2'||response.trim().toLowerCase() == "view last offer letter"){
       userState.currentStep = "end";
       const pdfPath = await generatePDF(userState.data);
-      const mediaUrl = `https://4293-103-159-214-186.ngrok-free.app/pdfs/${path.basename(pdfPath)}`;
+      const mediaUrl = `https://8612-103-159-214-189.ngrok-free.app/pdfs/${path.basename(pdfPath)}`;
       console.log("Media URL:", mediaUrl);
       twiml.message('Here is your job offer letter PDF:').media(mediaUrl);
     }
@@ -153,7 +153,7 @@ app.post('/whatsapp', async (req, res) => {
   else{
     userState.data.additionalTerms = response;
     const pdfPath = await generatePDF(userState.data);
-    const mediaUrl = `https://4293-103-159-214-186.ngrok-free.app/pdfs/${path.basename(pdfPath)}`;
+    const mediaUrl = `https://8612-103-159-214-189.ngrok-free.app/pdfs/${path.basename(pdfPath)}`;
     twiml.message('Here is your job offer letter PDF:').media(mediaUrl);
   }
 
