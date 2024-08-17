@@ -59,10 +59,8 @@ async function generatePDF(data) {
   const doc = new PDFDocument();
   const pdfPath = path.join(pdfDirectory, 'job_offer_letter.pdf');
 
-  // Write the PDF to a file
   doc.pipe(fs.createWriteStream(pdfPath));
 
-  // Add content to the PDF
   doc.fontSize(25).text('Job Offer Letter', { align: 'center' });
   doc.moveDown();
   doc.fontSize(16).text(`Dear ${data.candidateName},`);
@@ -85,10 +83,9 @@ async function generatePDF(data) {
   doc.text(data.hiringManagerName);
   doc.text(data.companyName);
 
-  // Finalize the PDF
   doc.end();
 
-  return pdfPath; // Return the path of the generated PDF
+  return pdfPath;
 }
 
 
